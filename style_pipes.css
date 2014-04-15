@@ -1,0 +1,187 @@
+table{
+    padding:0px;
+    margin:0px;
+    border-spacing:0px;
+    display:table;
+}
+tr{
+    padding:0px;
+    margin:0px;
+    vertical-align:top;
+}
+body{
+    max-width:4851px;
+    height:100%
+}
+
+html{
+    width:100%;
+    height:100%;
+}   
+
+#startbutton{
+    height:32px;
+    width:100px;
+
+}
+
+#score{
+    font-size:250%;
+    font-weight:bold;
+}
+
+#pipesandscores{
+    display:block;
+    line-height:0px;
+}
+.mainTable{
+    border-bottom:1px solid black;
+    border-left:1px solid black;
+    display:inline-block;
+
+}
+#scoreTable{
+    display:inline-block;
+    vertical-align:top;
+/*    border-top:1px solid black;
+    border-left:1px solid black;*/
+    margin:10px;
+    background-color:#cccccc;
+/*    border-radius:r8px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;*/
+    border:1px solid black;
+    max-width:50%;
+}
+
+.scorerow{
+    background-image:url('blue.png');
+    color:white;
+}
+
+.scorename, .scorepoints, .scoredate{
+/*    border-right:1px solid black;
+    border-bottom:1px solid black;*/
+    padding:5px;
+    padding-right:10px;
+    padding-left:10px;
+    margin:1px;
+}  
+
+.scorepoints{
+    font-weight:bold;
+    font-size:125%;
+}
+.scoredate{
+    text-align:right;
+}
+.scorename{
+}
+
+#submitscore{
+/*    position:absolute;
+    width:490px;
+    height:490px;*/
+    background-color:black;
+    opacity:0.9;
+    color:#ffffff;
+    display:None;
+    text-align:right;
+    font-size:125%;    
+    vertical-align:middle;
+}
+#submitscore a:visited{
+    color:white;
+}
+
+#submit_score{
+    font-size:150%;
+    font-weight:bold;
+    padding:2px;
+}
+
+#submit-innerdiv{
+    padding:20px;
+}
+
+.pipe{
+    height:48px;
+    width:48px;
+    border:1px solid black;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    padding:0px;
+    margin:0px;
+    background-color:white;
+    display:inline-block;
+}
+.pipe:hover{
+    background-color:yellow;
+}
+
+.filledSection, .section, .unavailableSection {
+    margin:0px;
+    padding:0px;
+    min-height:16px;
+    min-width:16px;
+    max-width:17px;
+    max-height:17px;
+    display:inline-block;
+}
+
+.filledSection{
+    background-color:blue;
+}
+
+.section{
+    background-color:gray;
+}
+
+.unavailableSection, .unavailableSection1{
+    background-color:transparent;
+}
+
+
+#score_points, #score_rotations, #score_modifier{
+    padding-left:5px;
+    padding-right:5px;
+}
+#score_points{
+    background-color:blue;
+}
+#score_rotations{
+    background-color:yellow;
+    color:black;
+  
+}
+#score_modifier{
+    background-color:pink;
+    color:black;
+}
+
+
+
+.sectionTable1:hover{
+    background-color:#ffff99;
+}
+.sectionTable1{
+    background-color:white;
+}
+/*.sectionTable2:hover{
+    background-color:yellow;
+}*/
+.sectionTable2{
+    background-color:pink;
+}
+.sectionTable3{
+    background-color:lightblue;
+}
+.sectionTable4{
+    background-color:orange;
+}
+.sectionTable5{
+    background-color:lightgreen;
+}
+.sectionTable6{
+    background-color:yellow;
+}
