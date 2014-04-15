@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+<html>
+<head><title>Pipes!</title>
+    <meta name="description" content="Connect the pipes"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style_pipes.css">
+    <script src = "script_pipes.js"></script>
+</head>
+<body>
+
+<div id="pipesandscores">
+
+</div>
+<div id='time'></div>
+<script>
+var start = new Date();
+try{
+    var patt = new RegExp("pipes([0-9]{0,2})","i");
+    var requestedSize = 10;
+    var docname = patt.exec(document.location.href);
+    if(docname[1]) requestedSize = docname[1];
+    
+    f = new PipeField(requestedSize);
+    f.appendToElement("pipesandscores");
+}catch(err){
+    document.write("error<br>");
+    document.write(err.description + "<br>");
+}finally{
+    document.write("<br>");
+//    document.write("done loading<br>");
+}
+var end = new Date();
+var t = end.valueOf() - start.valueOf();
+document.getElementById('time').innerHTML = 'generated in: ' + t + ' ms';
+</script>
+
+    <div id="submitscore"><div id="submit-innerdiv">
+        Points: <span id="score_points">0</span><br>
+        Moves: <span id="score_rotations">0</span><br>
+        Modifier: <span id="score_modifier">1</span><br>
+        <hr>
+        You scored: <span id="submit_score">0</span><br>
+    </div></div>
+
+<input id="startbutton" type="button" onclick="f.start()" value="start"/>
+<div id="score">0</div>
+<div id="legend" style="display:inline-block;">
+    <b style='background-color:pink'>&nbsp;&nbsp;</b> = 25% bonus<br>
+    <b style='background-color:lightblue'>&nbsp;&nbsp;</b> = <script>document.write(Math.round(gPipeField.x*gPipeField.x)/10)</script> points <br>
+    <b style='background-color:orange'>&nbsp;&nbsp;</b> = 66% chance to become either
+     <b style='background-color:pink'>&nbsp;&nbsp;</b> or
+     <b style='background-color:lightblue'>&nbsp;&nbsp;</b><br>
+    <b style='background-color:lightgreen'>&nbsp;&nbsp;</b>
+     = <script>document.write(Math.round(requestedSize * requestedSize / 2)/10)</script> 
+      points for each filled 
+     <b class='sectionTable2'>&nbsp;&nbsp;</b> or 
+     <b class='sectionTable3'>&nbsp;&nbsp;</b> <br>
+</div>     
+</body>
+</html>
+
