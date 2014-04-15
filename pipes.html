@@ -8,18 +8,26 @@
     <script src = "script_pipes.js"></script>
 </head>
 <body>
-
+<div id="rotationnote">Rotation is Counter Clockwise</div>
 <div id="pipesandscores">
 
 </div>
 <script>
 var start = new Date();
 try{
-    var patt = new RegExp("pipes([0-9]{0,2})","i");
+    var patt = new RegExp(/pipes\.html\?([C][C])*([0-9]{0,2})/gi);
     var requestedSize = 10;
     var docname = patt.exec(document.location.href);
-    if(docname[1]) requestedSize = docname[1];
-    
+    if (docname) {
+        if (docname[2]) requestedSize = docname[2];
+        if (docname[1] == "CC") {
+            gCounterClockwise = true;
+        } else {
+            gCounterClockwise = false;
+            document.getElementById("rotationnote").innerHTML = 
+                "Rotation is Clockwise";
+        }
+    }
     var f = new PipeField(requestedSize);
     f.appendToElement("pipesandscores");
 }catch(err){
