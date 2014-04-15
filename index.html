@@ -33,7 +33,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner" style="max-width:800px;">
-<div id="rotationnote">Rotation is Counter Clockwise</div>      
+<div id="rotationnote">Rotation is Counter Clockwise. &nbsp;&nbsp; <a href="?C">set to Clockwise</a> (reloads page)</div>      
 <div id="pipesandscores">
 
 </div>
@@ -52,7 +52,7 @@ try{
         } else if (docname[1] == "C") {
             gCounterClockwise = false;
             document.getElementById("rotationnote").innerHTML = 
-                "Rotation is Clockwise";
+                "Rotation is Clockwise. &nbsp;&nbsp; <a href='?CC'>set to Counter Clockwise</a> (reloads page)";
         }
     }
     f = new PipeField(requestedSize);
