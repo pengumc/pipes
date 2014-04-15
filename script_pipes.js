@@ -130,7 +130,11 @@ function Section(row, col){
 
    
     this.rotate = function(){
-        if (this.filled || this.spinning == false) return;
+        if (gPipeField.gameover || 
+            this.filled ||
+            this.spinning == false) {
+           return;
+        }
         var temp = this.directions[3];
         this.directions[3] = this.directions[1];
         this.directions[1] = this.directions[0];
@@ -185,6 +189,7 @@ function PipeField(size){
     var filledSpecials = new Array();
     var specialCount = new Array();
     gPipeField = this;
+    this.gameover = false;
     var mainField = new Field(this.x , "pipe");
     mainField.setAttribute("onclick", "f.getSection(%i).rotate()");
     mainField.table.className = "mainTable";
@@ -336,6 +341,7 @@ function PipeField(size){
             setTimeout("f.finish()",400);
             return
         }
+        this.gameover = true;
         updateScore(score);
         var box = document.getElementById("submitscore");
         box.style.display="inline-block";
