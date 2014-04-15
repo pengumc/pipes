@@ -1,4 +1,5 @@
 var PIPES_SPEED = 100;
+var gCounterClockwise = true;
 
 function Field(size, classstring){
     this.x = Math.floor(size);
@@ -56,6 +57,7 @@ function Field(size, classstring){
 
 //-----------------------------------------------------------------
 function Section(row, col){
+    //                 up     right  left   down
     this.directions = [false, false, false, false];
     this.filled = false;
     this.field = new Field(3, "unavailableSection");
@@ -136,10 +138,17 @@ function Section(row, col){
            return;
         }
         var temp = this.directions[3];
-        this.directions[3] = this.directions[1];
-        this.directions[1] = this.directions[0];
-        this.directions[0] = this.directions[2];
-        this.directions[2] = temp;
+        if (gCounterClockwise) {
+            this.directions[3] = this.directions[1];
+            this.directions[1] = this.directions[0];
+            this.directions[0] = this.directions[2];
+            this.directions[2] = temp;
+        } else {
+            this.directions[3] = this.directions[2];
+            this.directions[2] = this.directions[0];
+            this.directions[0] = this.directions[1];
+            this.directions[1] = temp;
+        }
         this.updateState();
         grotations++;
         updateScore();
