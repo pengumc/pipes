@@ -24,14 +24,17 @@ html{
     width:100px;
 
 }
-
+#side {
+    display:inline-block;
+    vertical-align:top;
+}
 #score{
     font-size:250%;
     font-weight:bold;
 }
 
 #pipesandscores{
-    display:block;
+    display:inline-block;
     line-height:0px;
 }
 .mainTable{
@@ -86,7 +89,6 @@ html{
     opacity:0.9;
     color:#ffffff;
     display:None;
-    text-align:right;
     font-size:125%;    
     vertical-align:middle;
 }
@@ -142,9 +144,10 @@ html{
 }
 
 
-#score_points, #score_rotations, #score_modifier{
+#score_points, #score_rotations, #score_modifier, #submit_score{
     padding-left:5px;
     padding-right:5px;
+    float:right;
 }
 #score_points{
     background-color:blue;
@@ -184,4 +187,10 @@ html{
 }
 .sectionTable6{
     background-color:yellow;
+}
+
+.block {
+    display:inline-block;
+    width:16px;
+    height:16px;
 }
