@@ -21,7 +21,7 @@
           <a id="forkme_banner" href="https://github.com/pengumc/pipes">View on GitHub</a>
 
           <h1 id="project_title">Pipes</h1>
-          <h2 id="project_tagline">connect the pipes webgame</h2>
+          <h2 id="project_tagline">"The internet is a series of tubes"</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/pengumc/pipes/zipball/master">Download this project as a .zip file</a>
@@ -32,7 +32,7 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+      <section id="main_content" class="inner" style="max-width:800px;">
 <div id="pipesandscores">
 
 </div>
@@ -50,37 +50,36 @@ try{
     document.write("error<br>");
     document.write(err.description + "<br>");
 }finally{
-    document.write("<br>");
+//    document.write("<br>");
 //    document.write("done loading<br>");
 }
-var end = new Date();
-var t = end.valueOf() - start.valueOf();
-document.getElementById('time').innerHTML = 'generated in: ' + t + ' ms';
 </script>
-
+<div id="side">
     <div id="submitscore"><div id="submit-innerdiv">
         Points: <span id="score_points">0</span><br>
         Moves: <span id="score_rotations">0</span><br>
         Modifier: <span id="score_modifier">1</span><br>
         <hr>
         You scored: <span id="submit_score">0</span><br>
-        <input type="button" value="refresh for new game" onclick="window.location.reload()"/>
+        <input id="newgame" type="button" value="refresh for new game" onclick="window.location.reload()"/>
     </div></div>
-
+<br>
 <input id="startbutton" type="button" onclick="f.start()" value="start"/>
 <div id="score">0</div>
 <div id="legend" style="display:inline-block;">
-    <b style='background-color:pink'>&nbsp;&nbsp;</b> = 25% bonus<br>
-    <b style='background-color:lightblue'>&nbsp;&nbsp;</b> = <script>document.write(Math.round(gPipeField.x*gPipeField.x)/10)</script> points <br>
-    <b style='background-color:orange'>&nbsp;&nbsp;</b> = 66% chance to become either
-     <b style='background-color:pink'>&nbsp;&nbsp;</b> or
-     <b style='background-color:lightblue'>&nbsp;&nbsp;</b><br>
-    <b style='background-color:lightgreen'>&nbsp;&nbsp;</b>
+    <span class="block" style='background-color:pink'>&nbsp;&nbsp;</span> = 25% bonus<br>
+    <b class="block" style='background-color:lightblue'>&nbsp;&nbsp;</b> = <script>document.write(Math.round(gPipeField.x*gPipeField.x)/10)</script> points <br>
+    <b class="block" style='background-color:orange'>&nbsp;&nbsp;</b> = 66% chance to become either
+    <b class="block" style='background-color:pink'>&nbsp;&nbsp;</b> or
+    <b class="block" style='background-color:lightblue'>&nbsp;&nbsp;</b><br>
+    <b class="block" style='background-color:lightgreen'>&nbsp;&nbsp;</b>
      = <script>document.write(Math.round(requestedSize * requestedSize / 2)/10)</script> 
       points for each filled 
-     <b class='sectionTable2'>&nbsp;&nbsp;</b> or 
-     <b class='sectionTable3'>&nbsp;&nbsp;</b> <br>
+     <b class="block" style='background-color:pink'></b> or 
+     <b class="block" style='background-color:lightblue'></b>
+      <br>
 </div>     
+</div>
 
 
       </section>
